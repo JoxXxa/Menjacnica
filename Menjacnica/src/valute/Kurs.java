@@ -4,14 +4,16 @@ import java.util.GregorianCalendar;
 
 public class Kurs {
 
+	private double prodajnikurs;
+	private double srednjikurs;
+	private double kupovnikurs;
+
 	public Kurs(double prodajnikurs, double kupovnikurs, double srednjikurs) {
 		super();
 		this.prodajnikurs = prodajnikurs;
 		this.kupovnikurs = kupovnikurs;
 		this.srednjikurs = srednjikurs;
 	}
-
-	private double prodajnikurs, kupovnikurs, srednjikurs;
 
 	public double getProdajnikurs() {
 		return prodajnikurs;
