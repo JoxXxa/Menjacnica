@@ -1,13 +1,18 @@
 package valute;
 
+import java.util.GregorianCalendar;
+
 public class Kurs {
-	public double prodajnikurs, kupovnikurs, srednjikurs;
+	private double prodajnikurs, kupovnikurs, srednjikurs;
+	
+	
 
 	public double getProdajnikurs() {
 		return prodajnikurs;
 	}
 
 	public void setProdajnikurs(double prodajnikurs) {
+		if(prodajnikurs>0)
 		this.prodajnikurs = prodajnikurs;
 	}
 
@@ -16,6 +21,7 @@ public class Kurs {
 	}
 
 	public void setKupovnikurs(double kupovnikurs) {
+		if(kupovnikurs>0)
 		this.kupovnikurs = kupovnikurs;
 	}
 
@@ -24,15 +30,16 @@ public class Kurs {
 	}
 
 	public void setSrednjikurs(double srednjikurs) {
+		if(srednjikurs>0)
 		this.srednjikurs = srednjikurs;
 	}
+
+	
 
 	@Override
 	public String toString() {
 		return "Kurs [prodajnikurs=" + prodajnikurs + ", kupovnikurs=" + kupovnikurs + ", srednjikurs=" + srednjikurs
-				+ ", getProdajnikurs()=" + getProdajnikurs() + ", getKupovnikurs()=" + getKupovnikurs()
-				+ ", getSrednjikurs()=" + getSrednjikurs() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode()
-				+ ", toString()=" + super.toString() + "]";
+				+ "]";
 	}
 
 	@Override
