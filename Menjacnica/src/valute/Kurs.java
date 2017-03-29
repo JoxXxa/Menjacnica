@@ -1,6 +1,14 @@
 package valute;
 
 public class Kurs {
+
+	public Kurs(double prodajnikurs, double kupovnikurs, double srednjikurs) {
+		super();
+		this.prodajnikurs = prodajnikurs;
+		this.kupovnikurs = kupovnikurs;
+		this.srednjikurs = srednjikurs;
+	}
+
 	public double prodajnikurs, kupovnikurs, srednjikurs;
 
 	public double getProdajnikurs() {

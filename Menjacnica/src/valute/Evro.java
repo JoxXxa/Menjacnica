@@ -6,8 +6,14 @@ public class Evro {
 	private String ime;
 	private String skracenica;
 	private GregorianCalendar datum;
-	private double prodajnikurs, kupovnikurs, srednjikurs;
+	private Kurs k;
 
+	public Evro(String ime, String skracenica, GregorianCalendar datum) {
+		super();
+		this.ime = ime;
+		this.skracenica = skracenica;
+		this.datum = datum;
+	}
 
 	public String getIme() {
 		return ime;
@@ -15,7 +21,7 @@ public class Evro {
 
 	public void setIme(String ime) {
 		if (ime != null && ime != "")
-		this.ime = ime;
+			this.ime = ime;
 	}
 
 	public String getSkracenica() {
@@ -38,9 +44,17 @@ public class Evro {
 		this.datum = datum;
 	}
 
+	public Kurs getK() {
+		return k;
+	}
+
+	public void setK(Kurs k) {
+		this.k = k;
+	}
+
 	@Override
 	public String toString() {
-		return "Evro [ime=" + ime + ", skracenica=" + skracenica + ", datum=" + datum + ", prodajnikurs=" + "]";
+		return "Evro [ime=" + ime + ", skracenica=" + skracenica + ", datum=" + datum + ", k=" + k + "]";
 	}
 
 	@Override
@@ -49,7 +63,7 @@ public class Evro {
 		int result = 1;
 		result = prime * result + ((datum == null) ? 0 : datum.hashCode());
 		result = prime * result + ((ime == null) ? 0 : ime.hashCode());
-		long temp;
+		result = prime * result + ((k == null) ? 0 : k.hashCode());
 		result = prime * result + ((skracenica == null) ? 0 : skracenica.hashCode());
 		return result;
 	}
@@ -72,6 +86,11 @@ public class Evro {
 			if (other.ime != null)
 				return false;
 		} else if (!ime.equals(other.ime))
+			return false;
+		if (k == null) {
+			if (other.k != null)
+				return false;
+		} else if (!k.equals(other.k))
 			return false;
 		if (skracenica == null) {
 			if (other.skracenica != null)
