@@ -3,6 +3,7 @@ package valute;
 import java.util.GregorianCalendar;
 
 public class Evro {
+
 	private String ime;
 	private String skracenica;
 	private GregorianCalendar datum;
