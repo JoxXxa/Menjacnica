@@ -6,7 +6,6 @@ public class Evro {
 	public String ime;
 	public String skracenica;
 	public GregorianCalendar datum;
-	public double prodajnikurs, kupovnikurs, srednjikurs;
 
 	public String getIme() {
 		return ime;
@@ -32,34 +31,9 @@ public class Evro {
 		this.datum = datum;
 	}
 
-	public double getProdajni() {
-		return prodajnikurs;
-	}
-
-	public void setProdajni(double prodajnikurs) {
-		this.prodajnikurs = prodajnikurs;
-	}
-
-	public double getKupovni() {
-		return kupovnikurs;
-	}
-
-	public void setKupovni(double kupovnikurs) {
-		this.kupovnikurs = kupovnikurs;
-	}
-
-	public double getSrednji() {
-		return srednjikurs;
-	}
-
-	public void setSrednji(double srednjikurs) {
-		this.srednjikurs = srednjikurs;
-	}
-
 	@Override
 	public String toString() {
-		return "Evro [ime=" + ime + ", skracenica=" + skracenica + ", datum=" + datum + ", prodajnikurs=" + prodajnikurs
-				+ ", kupovnikurs=" + kupovnikurs + ", srednjikurs=" + srednjikurs + "]";
+		return "Evro [ime=" + ime + ", skracenica=" + skracenica + ", datum=" + datum + ", prodajnikurs=" + "]";
 	}
 
 	@Override
@@ -69,13 +43,7 @@ public class Evro {
 		result = prime * result + ((datum == null) ? 0 : datum.hashCode());
 		result = prime * result + ((ime == null) ? 0 : ime.hashCode());
 		long temp;
-		temp = Double.doubleToLongBits(kupovnikurs);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
-		temp = Double.doubleToLongBits(prodajnikurs);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
 		result = prime * result + ((skracenica == null) ? 0 : skracenica.hashCode());
-		temp = Double.doubleToLongBits(srednjikurs);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
 		return result;
 	}
 
@@ -98,20 +66,12 @@ public class Evro {
 				return false;
 		} else if (!ime.equals(other.ime))
 			return false;
-		if (Double.doubleToLongBits(kupovnikurs) != Double.doubleToLongBits(other.kupovnikurs))
-			return false;
-		if (Double.doubleToLongBits(prodajnikurs) != Double.doubleToLongBits(other.prodajnikurs))
-			return false;
 		if (skracenica == null) {
 			if (other.skracenica != null)
 				return false;
 		} else if (!skracenica.equals(other.skracenica))
 			return false;
-		if (Double.doubleToLongBits(srednjikurs) != Double.doubleToLongBits(other.srednjikurs))
-			return false;
 		return true;
 	}
-	
-	
 
 }
