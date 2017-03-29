@@ -3,16 +3,17 @@ package valute;
 import java.util.GregorianCalendar;
 
 public class Evro {
-	public String ime;
-	public String skracenica;
-	public GregorianCalendar datum;
-	public double prodajnikurs, kupovnikurs, srednjikurs;
+	private String ime;
+	private String skracenica;
+	private GregorianCalendar datum;
+	private double prodajnikurs, kupovnikurs, srednjikurs;
 
 	public String getIme() {
 		return ime;
 	}
 
 	public void setIme(String ime) {
+		if (ime != null && ime != "")
 		this.ime = ime;
 	}
 
@@ -21,6 +22,8 @@ public class Evro {
 	}
 
 	public void setSkracenica(String skracenica) {
+		if (skracenica != null && skracenica != "")
+			;
 		this.skracenica = skracenica;
 	}
 
@@ -29,6 +32,8 @@ public class Evro {
 	}
 
 	public void setDatum(GregorianCalendar datum) {
+		if (datum.after(new GregorianCalendar()))
+			;
 		this.datum = datum;
 	}
 
@@ -111,7 +116,5 @@ public class Evro {
 			return false;
 		return true;
 	}
-	
-	
 
 }
