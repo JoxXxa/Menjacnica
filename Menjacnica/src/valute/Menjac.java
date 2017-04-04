@@ -7,12 +7,12 @@ import razmena.MenjacnicaInterfejs;
 
 public class Menjac implements MenjacnicaInterfejs {
 
-	LinkedList<Evro> valute = new LinkedList<>();
+	LinkedList<Valuta> valute = new LinkedList<>();
 
 	@Override
 	public void dodavanjeKursa(GregorianCalendar datum, double srednjikurs, double prodajnikurs, double kupovnikurs,
 			String ime, String skracenica) {
-		Evro e = new Evro(ime, skracenica, datum);
+		Valuta e = new Valuta(ime, skracenica, datum);
 		Kurs k = new Kurs(prodajnikurs, kupovnikurs, srednjikurs);
 		e.setK(k);
 		valute.add(e);
@@ -20,7 +20,7 @@ public class Menjac implements MenjacnicaInterfejs {
 
 	@Override
 	public void brisanjeKursa(GregorianCalendar datum, String ime, String skracenica) {
-		Evro e = new Evro(ime, skracenica, datum);
+		Valuta e = new Valuta(ime, skracenica, datum);
 		for (int i = 0; i < valute.size(); i++) {
 			if (e.equals(valute.get(i)))
 				valute.remove(i);
@@ -31,7 +31,7 @@ public class Menjac implements MenjacnicaInterfejs {
 	@Override
 	public Kurs pretragaKursa(GregorianCalendar datum, double srednjikurs, double prodajnikurs, double kupovnikurs,
 			String ime, String skracenica) {
-		Evro e = new Evro(ime, skracenica, datum);
+		Valuta e = new Valuta(ime, skracenica, datum);
 		Kurs k = new Kurs(prodajnikurs, kupovnikurs, srednjikurs);
 		e.setK(k);
 		for (int i = 0; i < valute.size(); i++) {

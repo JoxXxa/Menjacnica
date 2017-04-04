@@ -2,14 +2,16 @@ package valute;
 
 import java.util.GregorianCalendar;
 
-public class Evro {
+import javax.management.RuntimeErrorException;
+
+public class Valuta {
 
 	private String ime;
 	private String skracenica;
 	private GregorianCalendar datum;
 	private Kurs k;
 
-	public Evro(String ime, String skracenica, GregorianCalendar datum) {
+	public Valuta(String ime, String skracenica, GregorianCalendar datum) {
 		super();
 		this.ime = ime;
 		this.skracenica = skracenica;
@@ -21,7 +23,8 @@ public class Evro {
 	}
 
 	public void setIme(String ime) {
-		if (ime != null && ime != "")
+		if (ime == null && ime.isEmpty())
+			throw new RuntimeException();
 			this.ime = ime;
 	}
 
@@ -30,8 +33,8 @@ public class Evro {
 	}
 
 	public void setSkracenica(String skracenica) {
-		if (skracenica != null && skracenica != "")
-			;
+		if (skracenica == null && skracenica.isEmpty())
+			throw new RuntimeException();
 		this.skracenica = skracenica;
 	}
 
@@ -41,7 +44,7 @@ public class Evro {
 
 	public void setDatum(GregorianCalendar datum) {
 		if (datum.after(new GregorianCalendar()))
-			;
+			throw new RuntimeException();
 		this.datum = datum;
 	}
 
@@ -77,7 +80,7 @@ public class Evro {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Evro other = (Evro) obj;
+		Valuta other = (Valuta) obj;
 		if (datum == null) {
 			if (other.datum != null)
 				return false;

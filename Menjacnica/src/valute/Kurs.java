@@ -20,7 +20,8 @@ public class Kurs {
 	}
 
 	public void setProdajnikurs(double prodajnikurs) {
-		if (prodajnikurs > 0)
+		if (prodajnikurs <= 0)
+			throw new RuntimeException();
 			this.prodajnikurs = prodajnikurs;
 	}
 
@@ -29,7 +30,8 @@ public class Kurs {
 	}
 
 	public void setKupovnikurs(double kupovnikurs) {
-		if (kupovnikurs > 0)
+		if (kupovnikurs <= 0)
+			throw new RuntimeException();
 			this.kupovnikurs = kupovnikurs;
 	}
 
@@ -38,7 +40,8 @@ public class Kurs {
 	}
 
 	public void setSrednjikurs(double srednjikurs) {
-		if (srednjikurs > 0)
+		if (srednjikurs <= 0)
+			throw new RuntimeException();
 			this.srednjikurs = srednjikurs;
 	}
 
